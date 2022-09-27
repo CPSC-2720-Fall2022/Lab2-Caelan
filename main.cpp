@@ -1,5 +1,6 @@
 #include <iostream>
 #include <utility>
+#include <string>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ public:
         width = 0.0;
     }
     Rectangle(string n, double l, double w){
-        name = std::move(n);
+        name = move(n);
         length = l;
         width = w;
     }
@@ -28,7 +29,7 @@ public:
         length = l;
     }
     void set_name(string n){
-        name = std::move(n);
+        name = move(n);
     }
 
     string get_name(){
@@ -43,12 +44,52 @@ public:
     }
 
     void to_string() {
-        std::cout << "Rectangle Details" << endl
+        cout << "Rectangle Details" << endl
                   << "Name: " << get_name() << endl
                   << "Length: " << get_length() << endl
-                  << "Width: " << get_width() << std::endl;
+                  << "Width: " << get_width() << endl;
     }
 };
+
+
+int display_menu(){
+    int choice = 9;
+    cout << "Rectangle Creator!" << endl
+         << "1 - Create Rectangle" << endl
+         << "2 - Change name" << endl
+         << "3 - Change height" << endl
+         << "4 - Change Width" << endl
+         << "5 - Get Rectangle Info" << endl
+         << "9 - Exit" << endl
+         << "What would you like to do? ";
+    cin >> choice;
+
+    return choice;
+}
+
+Rectangle create_rectangle() {
+
+    string name;
+    double length;
+    double width;
+    cin.ignore(1000,'\n');
+    cout << "What would you like to name your rectangle? ";
+    getline(cin,name);
+
+    cout << "Length: ";
+    cin >> length;
+
+
+    cout << "Width: ";
+    cin >> width;
+    cout << "Rectangle created!" << endl << endl;
+
+    return *new Rectangle(name,length, width);
+
+}
+
+
+
 int main() {
     int choice = 0;
     bool initialized = false;
@@ -57,69 +98,50 @@ int main() {
     double length;
     double width;
     while (choice != 9) {
-        std::cout << "Rectangle Creator!" << endl
-                  << "1 - Create Rectangle" << endl
-                  << "2 - Change name" << endl
-                  << "3 - Change height" << endl
-                  << "4 - Change Width" << endl
-                  << "5 - Get Rectangle Info" << endl
-                  << "9 - Exit" << std::endl
-                  << "What would you like to do? ";
-        std::cin >> choice;
+
+        choice = display_menu();
 
         if (choice == 1){
 
-
-            std::cout << "What would you like to name your rectangle? ";
-            cin >> name;
-            rectangle.set_name(name);
-
-            cout << "Length: ";
-            cin >> length;
-            rectangle.set_length(length);
-
-            cout << "Width: ";
-            cin >> width;
-            rectangle.set_width(width);
-            cout << endl << "Rectangle created!" << std::endl;
-
+            rectangle = create_rectangle();
             initialized = true;
-        }
-        else if(initialized) {
+
+        } else if(initialized) {
             switch (choice) {
                 case 2:
-                    std::cout << "What would you like to change the rectangles name to? ";
+                    cout << "What would you like to change the rectangles name to? ";
                     cin >> name;
                     rectangle.set_name(name);
-                    cout << endl << "Name updated." << std::endl;
+                    cout << endl << "Name updated." << endl;
                     break;
                 case 3:
-                    std::cout << "What would you like to change the rectangles length to? ";
+                    cout << "What would you like to change the rectangles length to? ";
                     cin >> length;
                     rectangle.set_length(length);
-                    cout << endl << "Length updated." << std::endl;
+                    cout << endl << "Length updated." << endl;
                     break;
                 case 4:
-                    std::cout << "What would you like to change the rectangles width to? ";
+                    cout << "What would you like to change the rectangles width to? ";
                     cin >> width;
                     rectangle.set_width(width);
-                    cout << endl << "Width updated." << std::endl;
+                    cout << endl << "Width updated." << endl;
                     break;
                 case 5:
                     rectangle.to_string();
                     break;
                 case 9:
                     return 0;
-                    break;
                 default:
                     break;
             }
         }else {
-            std::cout << "Please choose a valid option" << std::endl;
+            cout << "Please choose a valid option" << endl;
         }
     }
 
     return 0;
 }
+
+
 
 
