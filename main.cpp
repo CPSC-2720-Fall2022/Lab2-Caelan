@@ -57,7 +57,7 @@ public:
 
 
 int display_menu(){
-    int choice = 9;
+    int choice = 0;
     cout << "Rectangle Creator!" << endl
          << "1 - Create Rectangle" << endl
          << "2 - Change name" << endl
@@ -68,6 +68,19 @@ int display_menu(){
          << "What would you like to do? ";
     cin >> choice;
 
+    return choice;
+}
+
+int edit_menu(){
+    int choice = 0;
+
+    cout << "What would you like to edit?" << endl
+         << "1 - Name" << endl
+         << "2 - Length" << endl
+         << "3 - Width" << endl
+         << "0 - Go Back" << endl;
+    cin >> choice;
+    
     return choice;
 }
 
