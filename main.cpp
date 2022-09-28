@@ -61,7 +61,7 @@ int display_menu(){
     cout << "Rectangle Creator!" << endl
          << "1 - Create Rectangle" << endl
          << "2 - Edit Rectangle" << endl
-         << "5 - Get Rectangle Info" << endl
+         << "3 - Get Rectangle Info" << endl
          << "9 - Exit" << endl
          << "What would you like to do? ";
     cin >> choice;
@@ -123,6 +123,8 @@ int main() {
             rectangle = create_rectangle();
             initialized = true;
 
+        } else if(!initialized && choice != 9) {
+            cout << "Please create the rectangle first" << endl;
         } else if(initialized) {
             switch (choice) {
                 case 2:
@@ -151,6 +153,8 @@ int main() {
                             case 0:
                                 cout << "Edit Complete" << endl;
                                 break;
+                            default:
+                                cout << "Please choose a valid option" << endl;
                         }
                     }
                     break;
