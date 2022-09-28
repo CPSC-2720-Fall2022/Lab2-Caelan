@@ -50,7 +50,7 @@ public:
         cout << "Rectangle Details" << endl
                   << "Name: " << get_name() << endl
                   << "Length: " << get_length() << endl
-                  << "Width: " << get_width() << endl;
+                  << "Width: " << get_width() << endl << endl;
     }
 
 };
@@ -65,6 +65,7 @@ int display_menu(){
          << "9 - Exit" << endl
          << "What would you like to do? ";
     cin >> choice;
+    cout << endl;
 
     return choice;
 }
@@ -72,12 +73,14 @@ int display_menu(){
 int edit_menu(){
     int choice = 0;
 
-    cout << "What would you like to edit?" << endl
+    cout << "Edit Menu" << endl
          << "1 - Name" << endl
          << "2 - Length" << endl
          << "3 - Width" << endl
-         << "0 - Go Back" << endl;
+         << "0 - Go Back" << endl
+         << "What would you like to do? ";
     cin >> choice;
+    cout << endl;
 
     return choice;
 }
@@ -113,17 +116,18 @@ int main() {
     double length;
     double width;
     int edit_choice;
-
+    //Main menu loop
     while (choice != 9) {
-
+        //Display menu and get user choice.
         choice = display_menu();
+
 
         if (choice == 1){
 
             rectangle = create_rectangle();
             initialized = true;
 
-        } else if(!initialized && choice != 9) {
+        }else if(!initialized && choice != 9) {
             cout << "Please create the rectangle first" << endl;
         } else if(initialized) {
             switch (choice) {
