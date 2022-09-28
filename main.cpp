@@ -60,9 +60,7 @@ int display_menu(){
     int choice = 0;
     cout << "Rectangle Creator!" << endl
          << "1 - Create Rectangle" << endl
-         << "2 - Change name" << endl
-         << "3 - Change height" << endl
-         << "4 - Change Width" << endl
+         << "2 - Edit Rectangle" << endl
          << "5 - Get Rectangle Info" << endl
          << "9 - Exit" << endl
          << "What would you like to do? ";
@@ -80,7 +78,7 @@ int edit_menu(){
          << "3 - Width" << endl
          << "0 - Go Back" << endl;
     cin >> choice;
-    
+
     return choice;
 }
 
@@ -114,6 +112,8 @@ int main() {
     string name;
     double length;
     double width;
+    int edit_choice;
+
     while (choice != 9) {
 
         choice = display_menu();
@@ -126,24 +126,36 @@ int main() {
         } else if(initialized) {
             switch (choice) {
                 case 2:
-                    cout << "What would you like to change the rectangles name to? ";
-                    cin >> name;
-                    rectangle.set_name(name);
-                    cout << endl << "Name updated." << endl;
+                    edit_choice = 9;
+                    while (edit_choice != 0) {
+                        edit_choice = edit_menu();
+                        switch (edit_choice) {
+                            case 1:
+                                cout << "What would you like to change the rectangles name to? ";
+                                cin >> name;
+                                rectangle.set_name(name);
+                                cout << endl << "Name updated." << endl;
+                                break;
+                            case 2:
+                                cout << "What would you like to change the rectangles length to? ";
+                                cin >> length;
+                                rectangle.set_length(length);
+                                cout << endl << "Length updated." << endl;
+                                break;
+                            case 3:
+                                cout << "What would you like to change the rectangles width to? ";
+                                cin >> width;
+                                rectangle.set_width(width);
+                                cout << endl << "Width updated." << endl;
+                                break;
+                            case 0:
+                                cout << "Edit Complete" << endl;
+                                break;
+                        }
+                    }
                     break;
+
                 case 3:
-                    cout << "What would you like to change the rectangles length to? ";
-                    cin >> length;
-                    rectangle.set_length(length);
-                    cout << endl << "Length updated." << endl;
-                    break;
-                case 4:
-                    cout << "What would you like to change the rectangles width to? ";
-                    cin >> width;
-                    rectangle.set_width(width);
-                    cout << endl << "Width updated." << endl;
-                    break;
-                case 5:
                     rectangle.to_string();
                     break;
                 case 9:
