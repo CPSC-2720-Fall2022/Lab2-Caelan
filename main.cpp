@@ -42,13 +42,17 @@ public:
     double get_length() const{
         return length;
     }
-
+    double get_area() {
+        double area = this->width * this->length;
+        return area;
+    }
     void to_string() {
         cout << "Rectangle Details" << endl
                   << "Name: " << get_name() << endl
                   << "Length: " << get_length() << endl
                   << "Width: " << get_width() << endl;
     }
+
 };
 
 
