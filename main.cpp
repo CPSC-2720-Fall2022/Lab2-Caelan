@@ -43,14 +43,18 @@ public:
         return length;
     }
     double get_area() {
-        double area = this->width * this->length;
-        return area;
+        return this->width * this->length;
+    }
+    double get_perimeter(){
+        return (this->width * 2) + (this->length * 2);
     }
     void to_string() {
         cout << "Rectangle Details" << endl
                   << "Name: " << get_name() << endl
                   << "Length: " << get_length() << endl
-                  << "Width: " << get_width() << endl << endl;
+                  << "Width: " << get_width() << endl
+                  << "Area: " << get_area() << endl
+                  << "Perimeter: " << get_perimeter() << endl << endl;
     }
 
 };
@@ -120,7 +124,6 @@ int main() {
     while (choice != 9) {
         //Display menu and get user choice.
         choice = display_menu();
-
 
         if (choice == 1){
 
