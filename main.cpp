@@ -2,11 +2,10 @@
 #include <utility>
 #include <string>
 
-using namespace std;
 
 class Rectangle {
 private:
-    string name;
+    std::string name;
     double length{};
     double width{};
 public:
@@ -15,8 +14,8 @@ public:
         length = 0.0;
         width = 0.0;
     }
-    Rectangle(string n, double l, double w){
-        name = move(n);
+    Rectangle(std::string n, double l, double w){
+        name = std::move(n);
         length = l;
         width = w;
     }
@@ -28,11 +27,11 @@ public:
     void set_length(double l){
         length = l;
     }
-    void set_name(string n){
-        name = move(n);
+    void set_name(std::string n){
+        name = std::move(n);
     }
 
-    string get_name(){
+    std::string get_name(){
         return name;
     }
     double get_width() const{
@@ -49,12 +48,12 @@ public:
         return (this->width * 2) + (this->length * 2);
     }
     void to_string() {
-        cout << "Rectangle Details" << endl
-                  << "Name: " << get_name() << endl
-                  << "Length: " << get_length() << endl
-                  << "Width: " << get_width() << endl
-                  << "Area: " << get_area() << endl
-                  << "Perimeter: " << get_perimeter() << endl << endl;
+        std::cout << "Rectangle Details" << std::endl
+                  << "Name: " << get_name() << std::endl
+                  << "Length: " << get_length() << std::endl
+                  << "Width: " << get_width() << std::endl
+                  << "Area: " << get_area() << std::endl
+                  << "Perimeter: " << get_perimeter() << std::endl << std::endl;
     }
 
 };
@@ -62,14 +61,14 @@ public:
 
 int display_menu(){
     int choice = 0;
-    cout << "Rectangle Creator!" << endl
-         << "1 - Create Rectangle" << endl
-         << "2 - Edit Rectangle" << endl
-         << "3 - Get Rectangle Info" << endl
-         << "9 - Exit" << endl
+    std::cout << "Rectangle Creator!" << std::endl
+         << "1 - Create Rectangle" << std::endl
+         << "2 - Edit Rectangle" << std::endl
+         << "3 - Get Rectangle Info" << std::endl
+         << "9 - Exit" << std::endl
          << "What would you like to do? ";
-    cin >> choice;
-    cout << endl;
+    std::cin >> choice;
+    std::cout << std::endl;
 
     return choice;
 }
@@ -77,34 +76,34 @@ int display_menu(){
 int edit_menu(){
     int choice = 0;
 
-    cout << "Edit Menu" << endl
-         << "1 - Name" << endl
-         << "2 - Length" << endl
-         << "3 - Width" << endl
-         << "0 - Go Back" << endl
+    std::cout << "Edit Menu" << std::endl
+         << "1 - Name" << std::endl
+         << "2 - Length" << std::endl
+         << "3 - Width" << std::endl
+         << "0 - Go Back" << std::endl
          << "What would you like to do? ";
-    cin >> choice;
-    cout << endl;
+    std::cin >> choice;
+    std::cout << std::endl;
 
     return choice;
 }
 
 Rectangle create_rectangle() {
 
-    string name;
+    std::string name;
     double length;
     double width;
-    cin.ignore(1000,'\n');
-    cout << "What would you like to name your rectangle? ";
-    getline(cin,name);
+    std::cin.ignore(1000,'\n');
+    std::cout << "What would you like to name your rectangle? ";
+    getline(std::cin,name);
 
-    cout << "Length: ";
-    cin >> length;
+    std::cout << "Length: ";
+    std::cin >> length;
 
 
-    cout << "Width: ";
-    cin >> width;
-    cout << "Rectangle created!" << endl << endl;
+    std::cout << "Width: ";
+    std::cin >> width;
+    std::cout << "Rectangle created!" << std::endl << std::endl;
 
     return *new Rectangle(name,length, width);
 
@@ -116,7 +115,7 @@ int main() {
     int choice = 0;
     bool initialized = false;
     Rectangle rectangle;
-    string name;
+    std::string name;
     double length;
     double width;
     int edit_choice;
@@ -131,7 +130,7 @@ int main() {
             initialized = true;
 
         }else if(!initialized && choice != 9) {
-            cout << "Please create the rectangle first" << endl;
+            std::cout << "Please create the rectangle first" << std::endl;
         } else if(initialized) {
             switch (choice) {
                 case 2:
@@ -140,28 +139,28 @@ int main() {
                         edit_choice = edit_menu();
                         switch (edit_choice) {
                             case 1:
-                                cout << "What would you like to change the rectangles name to? ";
-                                cin >> name;
+                                std::cout << "What would you like to change the rectangles name to? ";
+                                std::cin >> name;
                                 rectangle.set_name(name);
-                                cout << endl << "Name updated." << endl;
+                                std::cout << std::endl << "Name updated." << std::endl;
                                 break;
                             case 2:
-                                cout << "What would you like to change the rectangles length to? ";
-                                cin >> length;
+                                std::cout << "What would you like to change the rectangles length to? ";
+                                std::cin >> length;
                                 rectangle.set_length(length);
-                                cout << endl << "Length updated." << endl;
+                                std::cout << std::endl << "Length updated." << std::endl;
                                 break;
                             case 3:
-                                cout << "What would you like to change the rectangles width to? ";
-                                cin >> width;
+                                std::cout << "What would you like to change the rectangles width to? ";
+                                std::cin >> width;
                                 rectangle.set_width(width);
-                                cout << endl << "Width updated." << endl;
+                                std::cout << std::endl << "Width updated." << std::endl;
                                 break;
                             case 0:
-                                cout << "Edit Complete" << endl;
+                                std::cout << "Edit Complete" << std::endl;
                                 break;
                             default:
-                                cout << "Please choose a valid option" << endl;
+                                std::cout << "Please choose a valid option" << std::endl;
                         }
                     }
                     break;
@@ -175,7 +174,7 @@ int main() {
                     break;
             }
         }else {
-            cout << "Please choose a valid option" << endl;
+            std::cout << "Please choose a valid option" << std::endl;
         }
     }
 
