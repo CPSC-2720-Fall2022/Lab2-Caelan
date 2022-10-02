@@ -50,10 +50,10 @@ public:
     void to_string() {
         std::cout << "Rectangle Details" << std::endl
                   << "Name: " << get_name() << std::endl
-                  << "Length: " << get_length() << std::endl
-                  << "Width: " << get_width() << std::endl
-                  << "Area: " << get_area() << std::endl
-                  << "Perimeter: " << get_perimeter() << std::endl << std::endl;
+                  << "Length: " << get_length() << " CM" << std::endl
+                  << "Width: " << get_width() <<  " CM" << std::endl
+                  << "Area: " << get_area() << " CM2" << std::endl
+                  << "Perimeter: " << get_perimeter() << " CM" << std::endl << std::endl;
     }
 
 };
