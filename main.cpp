@@ -142,19 +142,19 @@ int main() {
                                 std::cout << "What would you like to change the rectangles name to? ";
                                 std::cin >> name;
                                 rectangle.set_name(name);
-                                std::cout << std::endl << "Name updated." << std::endl;
+                                std::cout << std::endl << "Name set to " << name << std::endl;
                                 break;
                             case 2:
                                 std::cout << "What would you like to change the rectangles length to? ";
                                 std::cin >> length;
                                 rectangle.set_length(length);
-                                std::cout << std::endl << "Length updated." << std::endl;
+                                std::cout << std::endl << "Length set to " << length<< std::endl;
                                 break;
                             case 3:
                                 std::cout << "What would you like to change the rectangles width to? ";
                                 std::cin >> width;
                                 rectangle.set_width(width);
-                                std::cout << std::endl << "Width updated." << std::endl;
+                                std::cout << std::endl << "Width set to " << width << std::endl;
                                 break;
                             case 0:
                                 std::cout << "Edit Complete" << std::endl;
