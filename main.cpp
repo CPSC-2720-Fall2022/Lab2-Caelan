@@ -1,64 +1,7 @@
 #include <iostream>
 #include <utility>
 #include <string>
-
-
-class Rectangle {
-private:
-    std::string name;
-    double length{};
-    double width{};
-public:
-    Rectangle(){
-        name = "";
-        length = 0.0;
-        width = 0.0;
-    }
-    Rectangle(std::string n, double l, double w){
-        name = std::move(n);
-        length = l;
-        width = w;
-    }
-
-    void set_width(double w){
-        width = w;
-    }
-
-    void set_length(double l){
-        length = l;
-    }
-    void set_name(std::string n){
-        name = std::move(n);
-    }
-
-    std::string get_name(){
-        return name;
-    }
-    double get_width() const{
-        return width;
-    }
-
-    double get_length() const{
-        return length;
-    }
-    double get_area() {
-        return this->width * this->length;
-    }
-    double get_perimeter(){
-        return (this->width * 2) + (this->length * 2);
-    }
-    void to_string() {
-        std::cout << "Rectangle Details" << std::endl
-                  << "Name: " << get_name() << std::endl
-                  << "Length: " << get_length() << " CM" << std::endl
-                  << "Width: " << get_width() <<  " CM" << std::endl
-                  << "Area: " << get_area() << " CM2" << std::endl
-                  << "Perimeter: " << get_perimeter() << " CM" << std::endl << std::endl;
-    }
-
-};
-
-
+#include "Rectangle.h"
 int display_menu(){
     int choice = 0;
     std::cout << "Rectangle Creator!" << std::endl
