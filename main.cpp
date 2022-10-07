@@ -1,129 +1,35 @@
 #include <iostream>
-#include <utility>
-#include <string>
-#include "Rectangle.h"
-int display_menu(){
-    int choice = 0;
-    std::cout << "Rectangle Creator!" << std::endl
-         << "1 - Create Rectangle" << std::endl
-         << "2 - Edit Rectangle" << std::endl
-         << "3 - Get Rectangle Info" << std::endl
-         << "9 - Exit" << std::endl
-         << "What would you like to do? ";
-    std::cin >> choice;
-    std::cout << std::endl;
 
-    return choice;
+
+int addTwo (int x , int y) {
+    return x + y;
 }
 
-int edit_menu(){
-    int choice = 0;
-
-    std::cout << "Edit Menu" << std::endl
-         << "1 - Name" << std::endl
-         << "2 - Length" << std::endl
-         << "3 - Width" << std::endl
-         << "0 - Go Back" << std::endl
-         << "What would you like to do? ";
-    std::cin >> choice;
-    std::cout << std::endl;
-
-    return choice;
+int subtractTwoNumbers(int x, int y) {
+    return x + y;
 }
 
-Rectangle create_rectangle() {
-
-    std::string name;
-    double length;
-    double width;
-    std::cin.ignore(1000,'\n');
-    std::cout << "What would you like to name your rectangle? ";
-    getline(std::cin,name);
-
-    std::cout << "Length: ";
-    std::cin >> length;
-
-
-    std::cout << "Width: ";
-    std::cin >> width;
-    std::cout << "Rectangle created!" << std::endl << std::endl;
-
-    return *new Rectangle(name,length, width);
-
+int divideTwoNumbers(int x, int y) {
+    if (y == 0){
+        std::cout << "Can't Divide by Zero" << std::endl;
+        return 0;
+    }
+    return x/y;
 }
-
-
+int multiplyTwo(int x, int y) {
+    return x * y;
+}
 
 int main() {
-    int choice = 0;
-    bool initialized = false;
-    Rectangle rectangle;
-    std::string name;
-    double length;
-    double width;
-    int edit_choice;
-    //Main menu loop
-    while (choice != 9) {
-        //Display menu and get user choice.
-        choice = display_menu();
+    int x;
+    int y;
+    std::cout << "Enter two numbers seperated by spaces: ";
+    std::cin >> x;
+    std::cin >> x;
 
-        if (choice == 1){
-
-            rectangle = create_rectangle();
-            initialized = true;
-
-        }else if(!initialized && choice != 9) {
-            std::cout << "Please create the rectangle first" << std::endl;
-        } else if(initialized) {
-            switch (choice) {
-                case 2:
-                    edit_choice = 9;
-                    while (edit_choice != 0) {
-                        edit_choice = edit_menu();
-                        switch (edit_choice) {
-                            case 1:
-                                std::cout << "What would you like to change the rectangles name to? ";
-                                std::cin >> name;
-                                rectangle.set_name(name);
-                                std::cout << std::endl << "Name set to " << name << std::endl;
-                                break;
-                            case 2:
-                                std::cout << "What would you like to change the rectangles length to? ";
-                                std::cin >> length;
-                                rectangle.set_length(length);
-                                std::cout << std::endl << "Length set to " << length<< std::endl;
-                                break;
-                            case 3:
-                                std::cout << "What would you like to change the rectangles width to? ";
-                                std::cin >> width;
-                                rectangle.set_width(width);
-                                std::cout << std::endl << "Width set to " << width << std::endl;
-                                break;
-                            case 0:
-                                std::cout << "Edit Complete" << std::endl;
-                                break;
-                            default:
-                                std::cout << "Please choose a valid option" << std::endl;
-                        }
-                    }
-                    break;
-
-                case 3:
-                    rectangle.to_string();
-                    break;
-                case 9:
-                    return 0;
-                default:
-                    break;
-            }
-        }else {
-            std::cout << "Please choose a valid option" << std::endl;
-        }
-    }
-
+    std::cout << "Sum: " << addTwo(x,y) << std::endl
+    << "Difference: " << subtractTwoNumbers(x, y) << std::endl
+    << "Product: " << multiplyTwo(x, y) << std::endl
+    << "Quotient " << divideTwoNumbers(x, y);
     return 0;
 }
-
-
-
-
