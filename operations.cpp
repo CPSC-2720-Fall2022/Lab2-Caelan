@@ -1,7 +1,7 @@
 #include <iostream>
 #include "operations.h"
-int addTwo (int x , int y) {
-    return x + y;
+int square (int x) {
+    return x * x;
 }
 
 int subtractTwo(int x, int y) {
