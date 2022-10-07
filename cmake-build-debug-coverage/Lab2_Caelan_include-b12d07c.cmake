@@ -1,0 +1,5 @@
+if(EXISTS "/Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/Lab2_Caelan_tests-b12d07c.cmake")
+  include("/Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/Lab2_Caelan_tests-b12d07c.cmake")
+else()
+  add_test(Lab2_Caelan_NOT_BUILT-b12d07c Lab2_Caelan_NOT_BUILT-b12d07c)
+endif()
