@@ -1,6 +1,26 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja "-DCMAKE_CXX_FLAGS=-fprofile-instr-generate -fcoverage-mapping" "-DCMAKE_C_FLAGS=-fprofile-instr-generate -fcoverage-mapping" -G Ninja -S /Users/caelan/Documents/GitHub/Lab2-Caelan -B /Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage
--- Performing Test HAVE_FLAG__ffile_prefix_map__Users_caelan_Documents_GitHub_Lab2_Caelan_lib_Catch2__
--- Performing Test HAVE_FLAG__ffile_prefix_map__Users_caelan_Documents_GitHub_Lab2_Caelan_lib_Catch2__ - Success
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage
+[0/7] Performing update step for 'catch2-populate'
+fatal: could not read Username for 'https://github.com': Device not configured
+CMake Error at /Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/_deps/catch2-subbuild/catch2-populate-prefix/tmp/catch2-populate-gitupdate.cmake:97 (execute_process):
+  execute_process failed command indexes:
+
+    1: "Child return code: 128"
+
+
+
+FAILED: catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-update /Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-update 
+cd /Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/_deps/catch2-src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P /Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/_deps/catch2-subbuild/catch2-populate-prefix/tmp/catch2-populate-gitupdate.cmake
+ninja: build stopped: subcommand failed.
+
+CMake Error at /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent.cmake:1088 (message):
+  Build step for catch2 failed: 1
+Call Stack (most recent call first):
+  /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent.cmake:1217:EVAL:2 (__FetchContent_directPopulate)
+  /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent.cmake:1217 (cmake_language)
+  /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FetchContent.cmake:1260 (FetchContent_Populate)
+  CMakeLists.txt:14 (FetchContent_MakeAvailable)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/CMakeFiles/CMakeOutput.log".
+See also "/Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/CMakeFiles/CMakeError.log".
