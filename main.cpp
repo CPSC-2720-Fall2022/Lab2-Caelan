@@ -6,7 +6,7 @@ int addTwo (int x , int y) {
 }
 
 int subtractTwoNumbers(int x, int y) {
-    return x + y;
+    return x - y;
 }
 
 int divideTwoNumbers(int x, int y) {
