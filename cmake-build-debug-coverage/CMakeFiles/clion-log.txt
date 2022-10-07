@@ -1,4 +1,6 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja "-DCMAKE_CXX_FLAGS=-fprofile-instr-generate -fcoverage-mapping" "-DCMAKE_C_FLAGS=-fprofile-instr-generate -fcoverage-mapping" -G Ninja -S /Users/caelan/Documents/GitHub/Lab2-Caelan -B /Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage
+-- Performing Test HAVE_FLAG__ffile_prefix_map__Users_caelan_Documents_GitHub_Lab2_Caelan_lib_Catch2__
+-- Performing Test HAVE_FLAG__ffile_prefix_map__Users_caelan_Documents_GitHub_Lab2_Caelan_lib_Catch2__ - Success
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage

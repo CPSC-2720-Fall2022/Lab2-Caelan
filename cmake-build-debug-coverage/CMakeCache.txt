@@ -436,13 +436,13 @@ CTEST_SUBMIT_RETRY_DELAY:STRING=5
 Catch2WithMain_LIB_DEPENDS:STATIC=general;Catch2;
 
 //Value Computed by CMake
-Catch2_BINARY_DIR:STATIC=/Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/_deps/catch2-build
+Catch2_BINARY_DIR:STATIC=/Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/lib/Catch2
 
 //Value Computed by CMake
 Catch2_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-Catch2_SOURCE_DIR:STATIC=/Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/_deps/catch2-src
+Catch2_SOURCE_DIR:STATIC=/Users/caelan/Documents/GitHub/Lab2-Caelan/lib/Catch2
 
 //Maximum time allowed before CTest will kill the test.
 DART_TESTING_TIMEOUT:STRING=1500
@@ -694,6 +694,8 @@ DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 GITCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
+//Test HAVE_FLAG__ffile_prefix_map__Users_caelan_Documents_GitHub_Lab2_Caelan_lib_Catch2__
+HAVE_FLAG__ffile_prefix_map__Users_caelan_Documents_GitHub_Lab2_Caelan_lib_Catch2__:INTERNAL=1
 //ADVANCED property for variable: MAKECOMMAND
 MAKECOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_COMMAND
@@ -703,7 +705,7 @@ MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: SITE
 SITE-ADVANCED:INTERNAL=1
 //Catch2 full path to CatchAddTests.cmake helper file
-_CATCH_DISCOVER_TESTS_SCRIPT:INTERNAL=/Users/caelan/Documents/GitHub/Lab2-Caelan/cmake-build-debug-coverage/_deps/catch2-src/extras/CatchAddTests.cmake
+_CATCH_DISCOVER_TESTS_SCRIPT:INTERNAL=/Users/caelan/Documents/GitHub/Lab2-Caelan/lib/Catch2/extras/CatchAddTests.cmake
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 
