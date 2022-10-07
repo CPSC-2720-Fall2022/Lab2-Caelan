@@ -10,7 +10,7 @@ int subtractTwo(int x, int y) {
 
 int divideTwo(int x, int y) {
     if (y == 0){
-        std::cout << "Can't Divide by Zero" << std::endl;
+        std::cout << "DIVERR: Can't Divide by Zero" << std::endl;
         return 0;
     }
     return x/y;
