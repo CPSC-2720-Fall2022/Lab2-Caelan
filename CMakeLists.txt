@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
 project(Lab2_Caelan)
-include_directories(include)
+
 set(CMAKE_CXX_STANDARD 14)
 
 Include(FetchContent)
@@ -29,7 +29,7 @@ add_library(operations operations.cpp)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Catch2::Catch2WithMain operations)
 
-list(APPEND CMAKE_MODULE_PATH lib/Catch2/extras)
+list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 include(CTest)
 include(Catch)
 
