@@ -3,4 +3,4 @@ project(Lab2_Caelan)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Lab2_Caelan main.cpp Rectangle.cpp Rectangle.h)
+add_executable(Lab2_Caelan main.cpp)
