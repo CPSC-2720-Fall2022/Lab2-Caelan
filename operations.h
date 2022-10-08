@@ -3,7 +3,7 @@
 //
 
 #ifndef LAB2_CAELAN_OPERATIONS_H
-int addTwo(int x, int y);
+int square(int x);
 int subtractTwo(int x, int y);
 int divideTwo(int x, int y);
 int multiplyTwo(int x, int y);
