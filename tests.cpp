@@ -3,7 +3,7 @@
 #include "operations.h"
 
 
-TEST_CASE("square an int" ,"[square]"){
+TEST_CASE("Square an int" ,"[square]"){
     REQUIRE(square(2) == 4);
     REQUIRE(square(0) == 0);
     REQUIRE(square(-2) == 4);
