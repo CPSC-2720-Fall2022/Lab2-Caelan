@@ -1,5 +1,6 @@
 #include <iostream>
 #include "operations.h"
+
 int square (int x) {
     return x * x;
 }
