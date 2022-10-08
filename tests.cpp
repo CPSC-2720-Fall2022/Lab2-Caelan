@@ -3,11 +3,11 @@
 #include "operations.h"
 
 
-TEST_CASE("Test addition of two integers" ,"[addTwo]"){
-    REQUIRE(addTwo(2,2) == 4);
-    REQUIRE(addTwo(1,0) == 1);
-    REQUIRE(addTwo(-1,2) == 1);
-    REQUIRE(addTwo(0,0) == 0);
+TEST_CASE("square an int" ,"[square]"){
+    REQUIRE(square(2) == 4);
+    REQUIRE(square(0) == 0);
+    REQUIRE(square(-2) == 4);
+    REQUIRE(square(3) == 9);
 }
 
 TEST_CASE("Test subtraction of two integers" ,"[subtractTwo]"){
